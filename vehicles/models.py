@@ -3,7 +3,7 @@ from drivers.models import Driver
 # Create your models here.
 
 class Vehicle(models.Model):
-    id  = models.IntegerField()
+    id  = models.IntegerField(primary_key=True)
     driver_id  = models.ForeignKey(Driver, on_delete=models.SET_NULL,null=True, related_name='vehicle')
     make  = models.CharField(max_length=64)
     model  = models.CharField(max_length=64)
